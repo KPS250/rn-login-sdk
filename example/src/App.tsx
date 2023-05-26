@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 import { openDigipass } from 'rn-login-sdk';
 
