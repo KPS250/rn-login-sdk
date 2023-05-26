@@ -8,23 +8,25 @@ Flutter Module Wrapping for React Native
 npm install rn-login-sdk
 ```
 
-## Usage
+## Integration in React Native
 
 ```js
-import { multiply } from 'rn-login-sdk';
+import React from 'react';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { openDigipass } from 'rn-login-sdk';
 
-// ...
+export default function App() {
+  return (
+    <View style={styles.container}>
+      {/* Open Flutter Login SDK */}
+      <Pressable style={styles.button} onPress={openDigipass}>
+        <Text style={styles.text}>{'Open Login SDK'}</Text>
+      </Pressable>
+    </View>
+  );
+}
 
-const result = await multiply(3, 7);
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
 
 ---
 
