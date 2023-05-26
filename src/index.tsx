@@ -27,3 +27,7 @@ const RnLoginSdk = RnLoginSdkModule
 export function multiply(a: number, b: number): Promise<number> {
   return RnLoginSdk.multiply(a, b);
 }
+
+export const openDigipass = () => {
+  return RnLoginSdk.openDigipass();
+};

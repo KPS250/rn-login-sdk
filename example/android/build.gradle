@@ -19,3 +19,15 @@ buildscript {
         classpath("com.facebook.react:react-native-gradle-plugin")
     }
 }
+allprojects{
+    repositories{
+        String storageUrl = "https://storage.googleapis.com"
+        maven {
+            url '../../../flutter_login_sdk/build/host/outputs/repo'
+        }
+        maven {
+            url "$storageUrl/download.flutter.io"
+        }
+    }
+}
+

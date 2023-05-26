@@ -42,6 +42,9 @@ android {
     release {
       minifyEnabled false
     }
+    profile {
+      initWith debug
+    }
   }
 
   lintOptions {
@@ -71,6 +74,12 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven {
+    url "../flutter_login_sdk/build/host/outputs/repo"
+  }
+  maven {
+    url "https://storage.googleapis.com/download.flutter.io"
+  }
 }
 
 
@@ -79,6 +88,10 @@ dependencies {
   // For > 0.71, this will be replaced by `com.facebook.react:react-android:$version` by react gradle plugin
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
+
+   debugImplementation 'com.example.flutter_login_sdk:flutter_debug:1.0'
+   profileImplementation 'com.example.flutter_login_sdk:flutter_profile:1.0'
+   releaseImplementation 'com.example.flutter_login_sdk:flutter_release:1.0'
 }
 
 if (isNewArchitectureEnabled()) {

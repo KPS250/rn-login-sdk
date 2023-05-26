@@ -1,18 +1,14 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'rn-login-sdk';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { openDigipass } from 'rn-login-sdk';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Pressable style={styles.button} onPress={openDigipass}>
+        <Text style={styles.text}>{'Open Login SDK'}</Text>
+      </Pressable>
     </View>
   );
 }
@@ -20,12 +16,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    marginHorizontal: 20,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: '#1abc9c',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
   },
 });
