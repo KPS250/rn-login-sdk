@@ -10,4 +10,5 @@ abstract class RnLoginSdkSpec extends ReactContextBaseJavaModule {
   }
 
   public abstract void multiply(double a, double b, Promise promise);
+   public abstract void openLoginSdk(Promise promise);
 }

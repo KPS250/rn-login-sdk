@@ -13,19 +13,35 @@ npm install rn-login-sdk
 ```js
 import React from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
-import { openDigipass } from 'rn-login-sdk';
+import { openLoginSdk } from 'rn-login-sdk';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* Open Flutter Login SDK */}
-      <Pressable style={styles.button} onPress={openDigipass}>
+      <Pressable style={styles.button} onPress={openLoginSdk}>
         <Text style={styles.text}>{'Open Login SDK'}</Text>
       </Pressable>
     </View>
   );
 }
+```
 
+## Integration for Android
+
+Open android/build.gradle and add below snippet at the end:
+
+```js
+allprojects{
+    repositories{
+        String storageUrl = "https://storage.googleapis.com"
+        maven {
+            url '../../../flutter_login_sdk/build/host/outputs/repo'
+        }
+        maven {
+            url "$storageUrl/download.flutter.io"
+        }
+    }
 ```
 
 ---

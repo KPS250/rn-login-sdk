@@ -6,6 +6,7 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactMethod;
 
+// For Flutter Integration
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.module.annotations.ReactModule;
 import io.flutter.embedding.android.FlutterActivity;
@@ -16,6 +17,8 @@ import android.app.Activity;
 
 public class RnLoginSdkModule extends RnLoginSdkSpec {
   public static final String NAME = "RnLoginSdk";
+
+  // For Flutter Integration
   private final ReactApplicationContext reactContext;
   public FlutterEngine flutterEngine;
 
@@ -70,8 +73,9 @@ public class RnLoginSdkModule extends RnLoginSdkSpec {
     promise.resolve(a * b);
   }
 
+ // For Flutter Integration
   @ReactMethod
-  public void openDigipass() {
+  public void openLoginSdk() {
     Activity currentActivity = reactContext.getCurrentActivity();
    
     currentActivity.startActivity(
